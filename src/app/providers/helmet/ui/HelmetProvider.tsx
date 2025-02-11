@@ -11,9 +11,11 @@ const HelmetProviderFC: FC<{ children: JSX.Element }> = ({ children }) => {
     image: import.meta.env.VITE_APP_IMAGE || "",
   };
 
+  if (import.meta.env.DEV) return children;
+
   return (
     <HelmetProvider>
-      {import.meta.env.PROD && <Seo {...seoProps} />}
+      <Seo {...seoProps} />
       {children}
     </HelmetProvider>
   );
