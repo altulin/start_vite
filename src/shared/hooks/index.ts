@@ -1,3 +1,4 @@
-import { useAppDispatch, useAppSelector } from "./store/hook";
+import { useAppDispatch, useAppSelector } from "@/shared/hooks/store/hook";
+import useGetFieldData from "@/shared/hooks/form/fieldData";
 
-export { useAppDispatch, useAppSelector };
+export { useAppDispatch, useAppSelector, useGetFieldData };

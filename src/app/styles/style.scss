@@ -4,6 +4,6 @@
 // @import "../../node_modules/swiper/swiper.scss";
 
 // @use "./helpers/_mixins";
-// @use "./helpers/_font";
+@use "@/shared/sass/fonts";
 @use "./global";
 // @use "./vendor/headroom";

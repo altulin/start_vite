@@ -1,4 +1,4 @@
-import PageHome from "@/pages/home/PageHome";
+import { PageHome } from "@/pages/home";
 import { BaseLayout } from "@/widgets/ui";
 import { FC } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router";
