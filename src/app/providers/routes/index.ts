@@ -1,3 +1,3 @@
-import RoutesProviderFC from "./ui/RoutesProvider";
+import RoutesProviderFC from "./RoutesProvider";
 
 export { RoutesProviderFC };

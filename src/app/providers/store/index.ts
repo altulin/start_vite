@@ -1,5 +1,3 @@
-import StoreProvider from "./ui/StoreProvider";
-import { RootState, AppDispatch } from "./config/store";
+import StoreProvider from "./StoreProvider";
 
 export { StoreProvider };
-export type { RootState, AppDispatch };

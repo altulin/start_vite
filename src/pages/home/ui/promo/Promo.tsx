@@ -1,10 +1,10 @@
 import clsx from "clsx";
 import { FC } from "react";
-import style from "./Promo.module.scss";
+import style from "../../styles/Promo.module.scss";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Field, makeInitialValues, validateSchema } from "@/entities/form";
-import { formData } from "./config";
+import { formData } from "../../modal/promo/config";
 
 const Promo: FC = () => {
   const { ...methods } = useForm({

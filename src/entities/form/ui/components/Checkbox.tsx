@@ -6,8 +6,8 @@ import IconRule from "@/shared/images/sprite/rule.svg";
 import { useController } from "react-hook-form";
 import Input from "./Input";
 import { ITextInput } from "../../api/types";
-import { useGetFieldData } from "@/shared/hooks";
 import { SpriteSVG } from "@/shared/ui";
+import useGetFieldData from "../../lib/fieldData";
 
 const Checkbox: FC<ITextInput> = ({ children, ...props }) => {
   const { modifier, checked } = props;

@@ -6,7 +6,7 @@ import Container from "./Container";
 import Label from "./Label";
 import Input from "../components/Input";
 import { ITextInput } from "../../api/types";
-import { checkArr } from "@/features/check";
+import { checkArr } from "@/shared/check";
 
 const Field: FC<ITextInput> = ({ component: Component, ...props }) => {
   const id = useId();

@@ -1,3 +1,3 @@
-import PageHome from "./PageHome";
+import PageHome from "./ui/PageHome";
 
 export { PageHome };

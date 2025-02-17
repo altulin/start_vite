@@ -2,8 +2,8 @@ import clsx from "clsx";
 import { FC } from "react";
 import style from "@/entities/form/style/Form.module.scss";
 import { useFormContext } from "react-hook-form";
-import { useGetFieldData } from "@/shared/hooks";
 import { ITextInput } from "../../api/types";
+import useGetFieldData from "../../lib/fieldData";
 
 const Input: FC<ITextInput> = ({ isErrorText = true, ...props }) => {
   const { register } = useFormContext();

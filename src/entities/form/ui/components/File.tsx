@@ -3,8 +3,8 @@ import { ChangeEvent, FC, useId, useRef } from "react";
 import style from "@/entities/form/style/Form.module.scss";
 import { useController } from "react-hook-form";
 import { ITextInput } from "../../api/types";
-import { useGetFieldData } from "@/shared/hooks";
-import { checkArr } from "@/features/check";
+import { checkArr } from "@/shared/check";
+import useGetFieldData from "../../lib/fieldData";
 
 const File: FC<ITextInput> = ({ ...props }) => {
   const { modifier, ...input_props } = props;

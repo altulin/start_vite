@@ -1,3 +1,3 @@
-import HelmetProviderFC from "./ui/HelmetProvider";
+import HelmetProviderFC from "./HelmetProvider";
 
 export { HelmetProviderFC };

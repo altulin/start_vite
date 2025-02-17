@@ -4,7 +4,7 @@ import style from "@/entities/form/style/Form.module.scss";
 import TextareaAutosize from "react-textarea-autosize";
 import { useController } from "react-hook-form";
 import { ITextInput } from "../../api/types";
-import { useGetFieldData } from "@/shared/hooks";
+import useGetFieldData from "../../lib/fieldData";
 
 const TextArea: FC<ITextInput> = ({ ...props }) => {
   const { modifier, name, placeholder, minRows, id } = props;

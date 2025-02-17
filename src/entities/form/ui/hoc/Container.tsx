@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { FC, InputHTMLAttributes } from "react";
 import style from "@/entities/form/style/Form.module.scss";
-import { useGetFieldData } from "@/shared/hooks";
+import useGetFieldData from "../../lib/fieldData";
 
 interface IContainer extends InputHTMLAttributes<HTMLInputElement> {
   label_text?: string;

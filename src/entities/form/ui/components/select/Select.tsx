@@ -7,8 +7,9 @@ import IconArrow from "@/shared/images/sprite/rule.svg";
 import { getClasses, ITextInput_Modifier, wrapClass } from "./data";
 import { useController } from "react-hook-form";
 import { SpriteSVG } from "@/shared/ui";
-import { useGetFieldData } from "@/shared/hooks";
+
 import { ITextInput } from "@/entities/form/api/types";
+import useGetFieldData from "@/entities/form/lib/fieldData";
 
 const MySelect: FC<ITextInput> = ({ ...props }) => {
   const { name, options, placeholder, modifier } = props;
