@@ -4,13 +4,13 @@ import { TSeo } from "@/shared/types";
 
 const HelmetProviderFC: FC<{ children: JSX.Element }> = ({ children }) => {
   const seoProps: TSeo = {
-    title: import.meta.env.VITE_APP_TITLE,
-    description: import.meta.env.VITE_APP_DESCRIPTION,
-    url: import.meta.env.VITE_APP_URL,
+    title: import.meta.env.VITE_APP_TITLE || "",
+    description: import.meta.env.VITE_APP_DESCRIPTION || "",
+    url: import.meta.env.VITE_APP_URL || "",
     image: import.meta.env.VITE_APP_IMAGE || "",
   };
 
-  if (import.meta.env.DEV) return children;
+  // if (import.meta.env.DEV) return children;
 
   return (
     <>

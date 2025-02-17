@@ -2,6 +2,11 @@ import { TSeo } from "@/shared/types";
 import { FC } from "react";
 
 export const Seo: FC<TSeo> = ({ title, description, image, url }) => {
+  // const isTitle = checkStr(title);
+  // const isDescription = checkStr(description);
+  // const isImage = checkStr(image);
+  // const isUrl = checkStr(url);
+
   return (
     <>
       <title>{title}</title>
@@ -22,7 +27,7 @@ export const Seo: FC<TSeo> = ({ title, description, image, url }) => {
       /> */}
       {/* <link rel="manifest" href="/site.webmanifest" /> */}
 
-      <meta property="og:url" content={`https://${url}/`} />
+      {/* <meta property="og:url" content={`https://${url}/`} /> */}
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -30,7 +35,7 @@ export const Seo: FC<TSeo> = ({ title, description, image, url }) => {
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content={url} />
-      <meta property="twitter:url" content={`https://${url}/`} />
+      {/* <meta property="twitter:url" content={`https://${url}/`} /> */}
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
