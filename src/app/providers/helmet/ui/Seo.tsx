@@ -1,27 +1,26 @@
-import { TSeo } from "@/shared/types/seo";
+import { TSeo } from "@/shared/types";
 import { FC } from "react";
-import { Helmet } from "react-helmet-async";
 
 export const Seo: FC<TSeo> = ({ title, description, image, url }) => {
   return (
-    <Helmet>
+    <>
       <title>{title}</title>
       <meta name="description" content={description} />
 
-      <link
+      {/* <link
         rel="icon"
         type="image/png"
         href="/favicon-96x96.png"
         sizes="96x96"
-      />
+      /> */}
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="shortcut icon" href="/favicon.ico" />
-      <link
+      {/* <link
         rel="apple-touch-icon"
         sizes="180x180"
         href="/apple-touch-icon.png"
-      />
-      <link rel="manifest" href="/site.webmanifest" />
+      /> */}
+      {/* <link rel="manifest" href="/site.webmanifest" /> */}
 
       <meta property="og:url" content={`https://${url}/`} />
       <meta property="og:type" content="website" />
@@ -51,6 +50,6 @@ export const Seo: FC<TSeo> = ({ title, description, image, url }) => {
           ></script> */}
         </>
       )}
-    </Helmet>
+    </>
   );
 };

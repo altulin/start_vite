@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { HelmetProviderFC } from "./providers/helmet";
-import { StoreProvider } from "./providers/store";
-import { RoutesProviderFC } from "./providers/routes";
+import { HelmetProviderFC } from "./app/providers/helmet";
+import { StoreProvider } from "./app/providers/store";
+import { RoutesProviderFC } from "./app/providers/routes";
 import "normalize.css";
-import "./styles/style.scss";
+import "@/app/styles/style.scss";
 
 const App: FC = () => {
   return (

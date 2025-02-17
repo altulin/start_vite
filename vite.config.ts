@@ -6,22 +6,19 @@ import svgr from "vite-plugin-svgr";
 import { robots } from "vite-plugin-robots";
 import createSvgSpritePlugin from "vite-plugin-svg-sprite";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      include: "**/*.tsx",
+    }),
     svgr(),
     robots({}),
     createSvgSpritePlugin({
       symbolId: "icon-[name]-[hash]",
-      // include: ["**/icons/**.svg", "**/icons/sections/**.svg"],
       include: ["**/sprite/**.svg"],
     }),
   ],
 
-  server: {
-    port: 3000,
-  },
   css: {
     postcss: {
       plugins: [
@@ -36,7 +33,6 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      // "@": "/src",
       "@": path.resolve(__dirname, "./src"),
     },
   },

@@ -1,5 +1,4 @@
 import { FC, JSX } from "react";
-import { HelmetProvider } from "react-helmet-async";
 import { Seo } from "./Seo";
 import { TSeo } from "@/shared/types";
 
@@ -14,10 +13,10 @@ const HelmetProviderFC: FC<{ children: JSX.Element }> = ({ children }) => {
   if (import.meta.env.DEV) return children;
 
   return (
-    <HelmetProvider>
+    <>
       <Seo {...seoProps} />
       {children}
-    </HelmetProvider>
+    </>
   );
 };
 export default HelmetProviderFC;
