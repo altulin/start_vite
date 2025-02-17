@@ -10,8 +10,8 @@ import {
   fieldRadio,
   fieldSelect,
   fieldTextArea,
-} from "@/shared/form";
-import { ITextInput } from "@/shared/types";
+} from "@/entities/form";
+import { ITextInput } from "@/entities/types";
 
 export const radio_list = [
   { label: "Тест_1", value: "test_1" },

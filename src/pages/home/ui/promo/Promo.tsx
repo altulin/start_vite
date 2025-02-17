@@ -3,7 +3,7 @@ import { FC } from "react";
 import style from "./Promo.module.scss";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Field, makeInitialValues, validateSchema } from "@/shared/form";
+import { Field, makeInitialValues, validateSchema } from "@/entities/form";
 import { formData } from "./config";
 
 const Promo: FC = () => {

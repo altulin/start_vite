@@ -1,4 +1,4 @@
-import { TSeo } from "@/shared/types";
+import { TSeo } from "@/entities/types";
 import { FC } from "react";
 
 export const Seo: FC<TSeo> = ({ title, description, image, url }) => {

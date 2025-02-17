@@ -1,6 +1,6 @@
 import { FC, JSX } from "react";
 import { Seo } from "./Seo";
-import { TSeo } from "@/shared/types";
+import { TSeo } from "@/entities/types";
 
 const HelmetProviderFC: FC<{ children: JSX.Element }> = ({ children }) => {
   const seoProps: TSeo = {
