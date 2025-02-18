@@ -25,14 +25,14 @@ enum fields {
   TEXTAREA = "textarea",
 }
 
-const req = {
+const reqRule = {
   type: "required",
   params: [required],
 };
 
 export const validateFields: Record<fields, TValidations[]> = {
   [fields.NAME]: [
-    req,
+    reqRule,
     {
       type: "min",
       params: [2, nameMin],
@@ -50,10 +50,10 @@ export const validateFields: Record<fields, TValidations[]> = {
     },
   ],
 
-  [fields.DATEPICKER]: [req],
+  [fields.DATEPICKER]: [reqRule],
 
   [fields.EMAIL]: [
-    req,
+    reqRule,
     {
       type: "matches",
       params: [/@[^.]*\./, valid],
@@ -64,10 +64,10 @@ export const validateFields: Record<fields, TValidations[]> = {
     },
   ],
 
-  [fields.FILE]: [req],
+  [fields.FILE]: [reqRule],
 
   [fields.PASSWORD]: [
-    req,
+    reqRule,
     {
       type: "min",
       params: [8, passwordMin],
@@ -79,7 +79,7 @@ export const validateFields: Record<fields, TValidations[]> = {
   ],
 
   [fields.CONFIRMPASSWORD]: [
-    req,
+    reqRule,
     {
       type: "oneOf",
       params: [[yup.ref("password")], confirmPasswordMatch],
@@ -87,17 +87,17 @@ export const validateFields: Record<fields, TValidations[]> = {
   ],
 
   [fields.PHONE]: [
-    req,
+    reqRule,
     {
       type: "matches",
       params: [/^(\+7|8) \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/gm, valid],
     },
   ],
 
-  [fields.SELECT]: [req],
+  [fields.SELECT]: [reqRule],
 
   [fields.TEXTAREA]: [
-    req,
+    reqRule,
     {
       type: "max",
       params: [100, "Не более 100 символов"],
