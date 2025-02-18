@@ -3,8 +3,8 @@ import { FC } from "react";
 import style from "../../styles/Promo.module.scss";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Field, makeInitialValues, validateSchema } from "@/entities/form";
 import { formData } from "../../modal/promo/config";
+import { Field, makeInitialValues, validateSchema } from "@/widgets/form";
 
 const Promo: FC = () => {
   const { ...methods } = useForm({
@@ -23,6 +23,7 @@ const Promo: FC = () => {
   return (
     <section className={clsx(style.promo)}>
       <div className={clsx(style.promo__inner, "container")}>
+        <h1>gggllg</h1>
         <FormProvider {...methods}>
           <form onSubmit={handleSubmit(onSubmit)}>
             {formData.map((item) => (

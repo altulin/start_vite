@@ -1,4 +1,4 @@
-import { store } from "@/features/store";
+import { store } from "@/widgets/store";
 import { FC, ReactNode } from "react";
 import { Provider } from "react-redux";
 

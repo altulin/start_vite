@@ -11,7 +11,7 @@ import {
   fieldSelect,
   fieldTextArea,
   ITextInput,
-} from "@/entities/form";
+} from "@/widgets/form";
 
 export const radio_list = [
   { label: "Тест_1", value: "test_1" },

@@ -4,7 +4,7 @@ import { StoreProvider } from "./app/providers/store";
 import { RoutesProviderFC } from "./app/providers/routes";
 import "normalize.css";
 import "@/app/styles/style.scss";
-import { ModalManager } from "./entities/modal";
+import { ModalManager } from "./widgets/modal";
 
 const App: FC = () => {
   return (
