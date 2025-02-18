@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ITextInput, TValidations } from "@/entities/types";
+
 import * as yup from "yup";
+import { ITextInput, TValidations } from "../../api/types";
 
 export function createYupSchema(
   schema: { [key: string]: yup.AnySchema },
