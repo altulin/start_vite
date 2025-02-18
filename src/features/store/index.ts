@@ -1,8 +1,6 @@
 import { store } from "./api/store";
+import type { RootState, AppDispatch } from "./api/types";
+import { useAppDispatch, useAppSelector } from "./api/types";
 
-type RootState = ReturnType<typeof store.getState>;
-type AppDispatch = typeof store.dispatch;
-
-export { store };
-
+export { store, useAppDispatch, useAppSelector };
 export type { RootState, AppDispatch };
