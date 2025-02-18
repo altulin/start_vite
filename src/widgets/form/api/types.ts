@@ -34,6 +34,7 @@ export interface ITextInput extends InputHTMLAttributes<HTMLInputElement> {
   component?: FC<ITextInput>;
   name: string;
   isErrorText?: boolean;
+  inner?: FC;
   // [key: string]: any;
 }
 

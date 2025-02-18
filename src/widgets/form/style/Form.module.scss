@@ -17,6 +17,7 @@ input[type="checkbox"] {
 
   --font-size-label: 1rem;
   --font-size-input: 1rem;
+  --font-line-height: 1;
 
   --border-color: green;
   --border-color-hover: gray;
@@ -63,6 +64,7 @@ input[type="checkbox"] {
   border-radius: var(--border-radius);
   font-weight: 400;
   font-size: var(--font-size-input);
+  line-height: var(--font-line-height);
   color: var(--color-input);
   width: 100%;
   transition: 0.3s;
@@ -122,12 +124,14 @@ input[type="checkbox"] {
       color: var(--color-input);
       font-weight: 400;
       font-size: var(--font-size-input);
+      margin: 0;
+      padding: 0;
     }
 
     &__placeholder {
       font-weight: 400;
       font-size: var(--font-size-input);
-      line-height: 140%;
+      line-height: var(--font-line-height);
       color: var(--color-placeholder);
     }
 
@@ -173,7 +177,7 @@ input[type="checkbox"] {
     &__option {
       font-weight: 400;
       font-size: var(--font-size-input);
-      line-height: 140%;
+      line-height: var(--font-line-height);
       color: #141414;
       padding: 0.5rem 1.5rem;
 
@@ -198,6 +202,8 @@ input[type="checkbox"] {
   padding: var(--padding-input);
   resize: none;
   width: 100%;
+  overflow: hidden;
+  line-height: var(--font-line-height);
 
   &:hover {
     border-color: var(--border-color-hover);

@@ -11,6 +11,6 @@ interface IInitialState {
 }
 
 export const initialState: IInitialState = {
-  // modalState: null,
-  modalState: { info: { text: "xxxxxxxxxx  xxxxxx" } },
+  modalState: null,
+  // modalState: { info: { text: "Привет" } },
 };

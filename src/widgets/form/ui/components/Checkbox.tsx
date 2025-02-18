@@ -9,7 +9,7 @@ import { ITextInput } from "../../api/types";
 import { SpriteSVG } from "@/shared/ui";
 import useGetFieldData from "../../lib/fieldData";
 
-const Checkbox: FC<ITextInput> = ({ children, ...props }) => {
+const Checkbox: FC<ITextInput> = ({ inner: Component, ...props }) => {
   const { modifier, checked } = props;
   const { isError } = useGetFieldData(props.name);
   const [val, setVal] = useState<any>(checked);
@@ -19,9 +19,11 @@ const Checkbox: FC<ITextInput> = ({ children, ...props }) => {
   } = useController({
     name: props.name,
   });
+
   useEffect(() => {
     onChange(val);
   }, [onChange, val]);
+
   const handleClick = (e: MouseEvent<HTMLDivElement>) => {
     const previousSibling = (e.target as Element).previousElementSibling;
 
@@ -56,7 +58,7 @@ const Checkbox: FC<ITextInput> = ({ children, ...props }) => {
           {val && <SpriteSVG icon={IconRule} />}
         </span>
 
-        {children}
+        {Component && <Component />}
       </div>
     </>
   );

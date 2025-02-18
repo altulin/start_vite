@@ -24,6 +24,9 @@ const RadioGroup: FC<ITextInput> = ({ radio_list, children, ...props }) => {
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { init_value, ...inputProps } = props;
+
   return (
     <>
       {radio_list &&
@@ -36,12 +39,7 @@ const RadioGroup: FC<ITextInput> = ({ radio_list, children, ...props }) => {
             value={item.value}
             className={clsx(style.radio_el)}
           >
-            <Input
-              itemRef="input"
-              {...props}
-              id={`${id}_${i}`}
-              value={item.value}
-            />
+            <Input {...inputProps} id={`${id}_${i}`} value={item.value} />
 
             <span
               tabIndex={0}

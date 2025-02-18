@@ -21,7 +21,7 @@ const Field: FC<ITextInput> = ({ component: Component, ...props }) => {
   return (
     <Container {...props}>
       {checkArr(props.radio_list) ? (
-        <>{Component && <Component {...props} />}</>
+        <>{Component && <Component {...inputProps} />}</>
       ) : (
         <Label {...labelProps} id={id}>
           <Controller

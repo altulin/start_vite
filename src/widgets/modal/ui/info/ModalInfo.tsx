@@ -19,9 +19,7 @@ const ModalInfo: FC = () => {
   return (
     <Modal>
       <div className={clsx(style.modal__form)}>
-        <div className={clsx(style["modal-form__wrap"])}>
-          {text && <Title label={text} className={clsx(style.modal__title)} />}
-        </div>
+        {text && <Title label={text} className={clsx(style.modal__title)} />}
       </div>
     </Modal>
   );
