@@ -1,4 +1,8 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + FSD
 
-npx steiger ./src
-npx steiger ./src --watch
+### Шаблон
+
+- разработка `npm run dev`
+- сборка тест `npm run build:test`
+- сборка прод `npm run build:prod`
+- линтинг FSD `npx steiger ./src` или `npx steiger ./src --watch`
