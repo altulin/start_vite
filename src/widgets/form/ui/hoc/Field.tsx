@@ -6,22 +6,22 @@ import Container from "./Container";
 import Label from "./Label";
 import Input from "../components/Input";
 import { ITextInput } from "../../api/types";
-import { checkArr } from "@/shared/check";
+
+const arrTypes = ["radio", "file"];
 
 const Field: FC<ITextInput> = ({ component: Component, ...props }) => {
   const id = useId();
   const methods = useFormContext();
-
   const { validation_type, validations, ...labelProps } = props;
-
   const { label_text, ...inputProps } = labelProps;
-
   inputProps.id = id;
+
+  const type = props.type || "text";
 
   return (
     <Container {...props}>
-      {checkArr(props.radio_list) ? (
-        <>{Component && <Component {...inputProps} />}</>
+      {arrTypes.includes(type) ? (
+        <>{Component && <Component {...labelProps} />}</>
       ) : (
         <Label {...labelProps} id={id}>
           <Controller
