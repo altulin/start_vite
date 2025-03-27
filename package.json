@@ -10,7 +10,8 @@
     "build:test": "vite build --mode development",
     "build:prod": "vite build --mode production",
     "preview": "vite preview --port 3000",
-    "component": "generate-react component"
+    "component": "generate-react component",
+    "deploy": "npm run build:test && gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.0.0",
