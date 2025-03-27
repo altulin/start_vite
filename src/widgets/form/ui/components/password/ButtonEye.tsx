@@ -16,6 +16,7 @@ const ButtonEye: FC<IButtonEye> = ({ isTypeText, setType }) => {
       type="button"
       onClick={() => setType(!isTypeText)}
       className={clsx(style.button)}
+      aria-label="Toggle password visibility"
     >
       {isTypeText && (
         <SpriteSVG icon={IconEye} className={clsx(style.button__icon)} />

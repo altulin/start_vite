@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import clsx from "clsx";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import style from "../../../style/Form.module.scss";
 import Select from "react-select";
 import IconArrow from "@/shared/images/sprite/rule.svg";
@@ -19,6 +19,12 @@ const MySelect: FC<ITextInput> = ({ ...props }) => {
   } = useController({
     name,
   });
+
+  useEffect(() => {
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") console.log(e.target);
+    });
+  }, []);
 
   return (
     <Select

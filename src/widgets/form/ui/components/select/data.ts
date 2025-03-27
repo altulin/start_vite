@@ -14,11 +14,13 @@ const makeStyles = (element: string, modifier: ITextInput_Modifier) => {
 
 export const getClasses = (modifier: ITextInput_Modifier, isError: boolean) => {
   return {
-    control: () =>
-      clsx(
+    control: ({ isFocused }: { isFocused: boolean }) => {
+      return clsx(
         makeStyles("control", modifier),
         isError && style["select__control--error"],
-      ),
+        isFocused && style["select__control--focused"],
+      );
+    },
     valueContainer: () => makeStyles("valueContainer", modifier),
     placeholder: () => makeStyles("placeholder", modifier),
     indicatorsContainer: ({

@@ -9,7 +9,7 @@ input[type="checkbox"] {
 
 .container {
   --error: red;
-  --line: 0.03rem;
+  --line: 0.12rem;
 
   --color-placeholder: #b3c8d1;
   --color-label: #777;
@@ -20,7 +20,8 @@ input[type="checkbox"] {
   --font-line-height: 1;
 
   --border-color: green;
-  --border-color-hover: gray;
+  --border-color-hover: blue;
+  --border-color-focus: silver;
   --border-input: var(--line) solid var(--border-color);
   --border-radius: 0.62rem;
 
@@ -69,6 +70,10 @@ input[type="checkbox"] {
     border-color: var(--border-color-hover);
   }
 
+  &:focus {
+    border-color: var(--border-color-focus);
+  }
+
   &::placeholder {
     color: var(--color-placeholder);
   }
@@ -83,8 +88,17 @@ input[type="checkbox"] {
   }
 }
 
+input[type="checkbox"]:focus + .checkbox .checkbox__icon {
+  border-color: var(--border-color-focus);
+}
+
+input[type="radio"]:focus + .radio_el__mark {
+  border-color: var(--border-color-focus);
+}
+
 .select {
   width: 100%;
+
   .select {
     &__control {
       height: 100%;
@@ -102,6 +116,10 @@ input[type="checkbox"] {
 
       &--error {
         border-color: var(--error);
+      }
+
+      &--focused {
+        border-color: var(--border-color-focus);
       }
     }
 
@@ -206,6 +224,10 @@ input[type="checkbox"] {
     border-color: var(--border-color-hover);
   }
 
+  &:focus {
+    border-color: var(--border-color-focus);
+  }
+
   &::placeholder {
     color: var(--color-placeholder);
   }
@@ -229,7 +251,7 @@ input[type="checkbox"] {
     width: 1.5rem;
     height: 1.5rem;
     flex-shrink: 0;
-    pointer-events: none;
+    // pointer-events: none;
 
     &--error {
       border-color: var(--error);
@@ -240,6 +262,14 @@ input[type="checkbox"] {
       height: 80%;
       color: var(--border);
     }
+
+    &:hover {
+      border-color: var(--border-color-hover);
+    }
+
+    &:focus {
+      border-color: var(--border-color-focus);
+    }
   }
 }
 
@@ -249,6 +279,7 @@ input[type="checkbox"] {
   padding: var(--padding-input);
   transition: 0.3s;
   background-color: var(--background-input);
+  width: 100%;
 
   &__placeholder {
     font-size: var(--font-size-input);
@@ -260,6 +291,10 @@ input[type="checkbox"] {
     &--empty {
       color: var(--color-placeholder);
     }
+  }
+
+  &--focus {
+    border-color: var(--border-color-focus);
   }
 
   &:hover {
@@ -284,6 +319,10 @@ input[type="checkbox"] {
 
   &:hover {
     border-color: var(--border-color-hover);
+  }
+
+  &:focus {
+    border-color: var(--border-color-focus);
   }
 
   &__wrapper {
@@ -324,6 +363,18 @@ input[type="checkbox"] {
   right: 1rem;
   background-color: transparent;
 
+  &:hover {
+    svg {
+      stroke: var(--border-color-hover);
+    }
+  }
+
+  &:focus {
+    svg {
+      stroke: var(--border-color-focus);
+    }
+  }
+
   &__icon {
     stroke: var(--border-color);
     width: 1.5rem;
@@ -350,6 +401,10 @@ input[type="checkbox"] {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include m.hocus() {
+      border-color: var(--border-color-hover);
+    }
 
     svg {
       width: 80%;

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { ChangeEvent, FC, useId, useRef } from "react";
+import { ChangeEvent, FC, useRef } from "react";
 import style from "../../style/Form.module.scss";
 import { useController } from "react-hook-form";
 import { ITextInput } from "../../api/types";
@@ -9,8 +9,8 @@ import useGetFieldData from "../../lib/fieldData";
 const File: FC<ITextInput> = ({ ...props }) => {
   const { modifier, ...input_props } = props;
   const { isError } = useGetFieldData(props.name);
-  const id = useId();
-  const inputRef = useRef<HTMLInputElement>(null);
+
+  const labelRef = useRef<HTMLLabelElement>(null);
 
   const {
     field: { onChange, value },
@@ -27,30 +27,29 @@ const File: FC<ITextInput> = ({ ...props }) => {
 
   const label_list = checkValue(value);
 
-  const handleFocus = () => {
-    if (inputRef.current) {
-      inputRef.current.click();
-    }
-  };
-
   return (
-    <div
-      tabIndex={0}
-      onClick={handleFocus}
+    <label
+      htmlFor={props.id}
+      ref={labelRef}
       className={clsx(
         style.file,
         modifier && style[`file--${modifier}`],
-        isError && style["file--error"],
+        isError && style["file__input--error"],
       )}
     >
       <input
-        ref={inputRef}
-        id={id}
+        className={clsx(style.file__input)}
         type="file"
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
           if (e.target.files && e.target.files.length > 0) {
             onChange(e.target.files);
           }
+        }}
+        onFocus={() => {
+          labelRef.current?.classList.add(style["file--focus"]);
+        }}
+        onBlur={() => {
+          labelRef.current?.classList.remove(style["file--focus"]);
         }}
         {...input_props}
       />
@@ -70,7 +69,7 @@ const File: FC<ITextInput> = ({ ...props }) => {
           <>Загрузить</>
         )}
       </span>
-    </div>
+    </label>
   );
 };
 export default File;

@@ -29,7 +29,14 @@ const Checkbox: FC<ITextInput> = ({ inner: Component, ...props }) => {
       <Input
         {...props}
         value={val}
-        onInput={() => setVal(!val)}
+        onInput={() => {
+          setVal(!val);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            setVal(!val);
+          }
+        }}
         checked={val}
       />
 

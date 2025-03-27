@@ -41,11 +41,7 @@ const RadioGroup: FC<ITextInput> = ({ radio_list, children, ...props }) => {
           >
             <Input {...inputProps} id={`${id}_${i}`} value={item.value} />
 
-            <span
-              tabIndex={0}
-              onClick={handleClick}
-              className={clsx(style.radio_el__mark)}
-            >
+            <span onClick={handleClick} className={clsx(style.radio_el__mark)}>
               {value === item.value && <SpriteSVG icon={IconRule} />}
             </span>
 

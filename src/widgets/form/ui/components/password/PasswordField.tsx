@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import Input from "../Input";
 import ButtonEye from "./ButtonEye";
-import { ITextInput } from "@/entities/form/api/types";
+import { ITextInput } from "@/widgets/form/api/types";
 
 const PasswordField: FC<ITextInput> = ({ ...props }) => {
   const [isTypeText, setType] = useState(false);
