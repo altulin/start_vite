@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FC, MouseEvent, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import clsx from "clsx";
 import style from "../../style/Form.module.scss";
 import IconRule from "@/shared/images/sprite/rule.svg";
@@ -24,16 +24,8 @@ const Checkbox: FC<ITextInput> = ({ inner: Component, ...props }) => {
     onChange(val);
   }, [onChange, val]);
 
-  const handleClick = (e: MouseEvent<HTMLDivElement>) => {
-    const previousSibling = (e.target as Element).previousElementSibling;
-
-    if (previousSibling) {
-      (previousSibling as HTMLInputElement).click();
-    }
-  };
-
   return (
-    <>
+    <label htmlFor={props.id}>
       <Input
         {...props}
         value={val}
@@ -42,8 +34,6 @@ const Checkbox: FC<ITextInput> = ({ inner: Component, ...props }) => {
       />
 
       <div
-        tabIndex={0}
-        onClick={handleClick}
         className={clsx(
           style.checkbox,
           modifier && style[`checkbox--${modifier}`],
@@ -60,7 +50,7 @@ const Checkbox: FC<ITextInput> = ({ inner: Component, ...props }) => {
 
         {Component && <Component />}
       </div>
-    </>
+    </label>
   );
 };
 export default Checkbox;

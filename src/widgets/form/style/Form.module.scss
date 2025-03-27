@@ -50,11 +50,6 @@ input[type="checkbox"] {
     color: var(--color-label);
     margin-bottom: 0.75rem;
   }
-
-  &--checkbox {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-  }
 }
 
 .input {
@@ -84,10 +79,12 @@ input[type="checkbox"] {
 
   &__wrapper {
     position: relative;
+    display: flex;
   }
 }
 
 .select {
+  width: 100%;
   .select {
     &__control {
       height: 100%;

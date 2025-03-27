@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import clsx from "clsx";
-import { FC, useId } from "react";
+import { FC, useState } from "react";
 import style from "../../../style/Form.module.scss";
 import Select from "react-select";
 import IconArrow from "@/shared/images/sprite/rule.svg";
@@ -11,8 +11,8 @@ import { ITextInput } from "@/widgets/form/api/types";
 import useGetFieldData from "@/widgets/form/lib/fieldData";
 
 const MySelect: FC<ITextInput> = ({ ...props }) => {
-  const { name, options, placeholder, modifier } = props;
-  const id = useId();
+  const [isOpen, setIsOpen] = useState(false);
+  const { name, options, placeholder, modifier, id } = props;
   const { isError } = useGetFieldData(name);
   const {
     field: { onChange, value, onBlur },
@@ -24,6 +24,7 @@ const MySelect: FC<ITextInput> = ({ ...props }) => {
     <Select
       inputId={id}
       defaultMenuIsOpen={false}
+      menuIsOpen={isOpen}
       options={options as any}
       placeholder={placeholder}
       className={clsx(style[wrapClass])}
@@ -31,13 +32,20 @@ const MySelect: FC<ITextInput> = ({ ...props }) => {
         ...getClasses(modifier as ITextInput_Modifier, isError),
       }}
       name={name}
-      onBlur={onBlur}
-      onChange={(val: any) => onChange(val?.value)}
+      onBlur={() => {
+        onBlur();
+        setIsOpen(false);
+      }}
+      onChange={(val: any) => {
+        onChange(val?.value);
+        setIsOpen(false);
+      }}
       value={(options && options.find((el) => el.value === value)) || ""}
       components={{
         DropdownIndicator: () => <SpriteSVG icon={IconArrow} />,
       }}
       noOptionsMessage={() => "Данные не загрузились"}
+      onFocus={() => setIsOpen(true)}
     />
   );
 };
